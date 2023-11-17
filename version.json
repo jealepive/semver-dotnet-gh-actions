@@ -4,6 +4,9 @@
     "^refs/heads/main",
     "^refs/tags/v\\d+\\.\\d+"
   ],
+  "nugetPackageVersion": {
+    "semVer": 2
+  },
   "cloudBuild": {
     "buildNumber": {
       "enabled": true
