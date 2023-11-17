@@ -2,8 +2,8 @@ name: Build and publish NuGet package
 
 on:
   push:
-    branches: [ master ]
-    # tags: [ v* ]
+    branches: [ main ]
+    tags: [ v* ]
 
 jobs:
   build:
