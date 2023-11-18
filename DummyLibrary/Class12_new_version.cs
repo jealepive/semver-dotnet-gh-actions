@@ -1,6 +1,6 @@
 ﻿namespace DummyLibrary;
 
-public class Class12
+public class Class12_new_version
 {
 
 }
