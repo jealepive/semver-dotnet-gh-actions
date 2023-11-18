@@ -1,9 +1,11 @@
 {
-  "version": "1.2",
+  "version": "1.0",
   "publicReleaseRefSpec": [
     "^refs/heads/main",
     "^refs/tags/v\\d+\\.\\d+"
   ],
+  //"pathFilters": [ "./src" ], TODO: In Octane
+  "pathFilters": [ "./DummyLibrary" ],
   "nugetPackageVersion": {
     "semVer": 2
   },
