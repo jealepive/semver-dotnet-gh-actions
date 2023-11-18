@@ -5,7 +5,7 @@
     "^refs/tags/v\\d+\\.\\d+"
   ],
   //"pathFilters": [ "./src" ], TODO: In Octane
-  "pathFilters": [ "./DummyLibrary" ],
+  "pathFilters": [ "./DummyLibrary" ], 
   "nugetPackageVersion": {
     "semVer": 2
   },
