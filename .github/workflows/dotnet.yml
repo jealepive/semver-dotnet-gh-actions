@@ -19,8 +19,8 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - name: Install Nerdbank.GitVersioning
-      run: dotnet tool install nbgv --tool-path .
+    # - name: Install Nerdbank.GitVersioning
+    #   run: dotnet tool install nbgv --tool-path .
 
     - name: Restore dependencies
       run: dotnet restore
@@ -31,9 +31,15 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
 
-    - name: Generate version
-      run: nbgv get-version -v NuGetPackageVersion > nuget_version.txt
+    # - name: Generate version
+    #   run: nbgv get-version -v NuGetPackageVersion > nuget_version.txt
 
+    - uses: dotnet/nbgv@master
+      with:
+       setAllVars: true
+
+    - run: echo "NBGV_SemVer2 $NBGV_SemVer2"
+  
       # Display the version stored in the env variable
     - name: Display version
       run: echo $NBGV_NuGetPackageVersion
