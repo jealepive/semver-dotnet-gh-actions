@@ -35,6 +35,8 @@ jobs:
       run: nbgv get-version -v NuGetPackageVersion > nuget_version.txt
 
     - name: Pack
-      run: dotnet pack --no-build -p:PackageVersion=$(cat nuget_version.txt)
+      env:
+        NUGET_VERSION: ${{ env.NuGetPackageVersion }}
+      run: dotnet pack --no-build -p:PackageVersion=NUGET_VERSION
     # - name: Publish
     #   run: dotnet nuget push **/*.nupkg --source https://nuget.pkg.github.com/$GITHUB_REPOSITORY/index.json --api-key ${{secrets.GITHUB_TOKEN}} --skip-duplicate
