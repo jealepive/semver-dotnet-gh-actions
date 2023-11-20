@@ -36,11 +36,11 @@ jobs:
 
       # Display the version stored in the env variable
     - name: Display version
-      run: echo $NuGetPackageVersion
+      run: echo $NBGV_NuGetPackageVersion
 
     - name: Pack
       env:
-        NUGET_VERSION: ${{ env.NuGetPackageVersion }}
+        NUGET_VERSION: ${{ env.NBGV_NuGetPackageVersion }}
       run: dotnet pack --no-build -p:PackageVersion=NUGET_VERSION
     # - name: Publish
     #   run: dotnet nuget push **/*.nupkg --source https://nuget.pkg.github.com/$GITHUB_REPOSITORY/index.json --api-key ${{secrets.GITHUB_TOKEN}} --skip-duplicate
